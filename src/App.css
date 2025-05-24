@@ -2,31 +2,27 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
   background-color: #f4f7f9; /* Light grey background */
   color: #333; /* Darker text color */
   line-height: 1.6;
+  min-height: 100vh;
+  padding: 1rem; /* Add padding for mobile */
 }
 
 #root {
-  max-width: 700px; /* Slightly narrower for better readability */
-  margin: 2rem auto;
-  padding: 2rem;
+  max-width: 800px; /* Increased max-width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 1rem; /* Reduced padding */
   text-align: center;
-  background-color: #ffffff; /* White background for the main app container */
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Softer, more spread out shadow */
+  /* Removed background, border-radius, and box-shadow for simplicity */
 }
 
 h1 {
   font-size: 2.2em;
-  font-weight: 600; /* Slightly less bold */
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 2rem;
-  color: #2c3e50; /* Dark blue-grey for heading */
+  color: #2c3e50;
 }
 
 .logo {
@@ -59,10 +55,10 @@ h1 {
 
 /* Card Styling */
 .card {
-  padding: 2em;
-  border: 1px solid #e0e0e0; /* Lighter border */
+  padding: 1.5em;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
-  background-color: #ffffff; /* Card background */
+  background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   margin-top: 1.5rem;
 }
@@ -72,21 +68,24 @@ input[type="file"] {
   display: block;
   margin: 0 auto 1.5rem auto;
   padding: 12px 18px;
-  border: 2px dashed #007bff; /* Primary color dashed border */
-  background-color: #f8f9fa; /* Very light background for input */
-  color: #495057; /* Text color for input */
-  border-radius: 25px; /* Rounded look */
+  border: 2px dashed #007bff;
+  background-color: #f8f9fa;
+  color: #495057;
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   font-size: 0.95em;
+  width: 100%;
+  max-width: 300px; /* Limit width on larger screens */
+  box-sizing: border-box;
 }
 
 input[type="file"]::file-selector-button {
-  background-color: #007bff; /* Primary color for button */
+  background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 20px; /* Highly rounded */
+  border-radius: 20px;
   cursor: pointer;
   margin-right: 12px;
   transition: background-color 0.2s ease-in-out;
@@ -99,39 +98,40 @@ input[type="file"]:hover {
 }
 
 input[type="file"]::file-selector-button:hover {
-  background-color: #0056b3; /* Darker on hover */
+  background-color: #0056b3;
 }
 
 /* Button Styling */
 button {
-  border-radius: 25px; /* Highly rounded / Pill shape */
+  border-radius: 25px;
   border: 1px solid transparent;
   padding: 0.8em 1.8em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #007bff; /* Primary color */
+  background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.25s, box-shadow 0.25s, transform 0.2s;
-  display: inline-block; /* Changed to inline-block for natural width */
-  margin-top: 1rem; /* Add some space above */
+  display: inline-block;
+  margin-top: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  min-height: 44px; /* Minimum touch target size for mobile */
 }
 
 button:hover {
-  background-color: #0056b3; /* Darker primary on hover */
+  background-color: #0056b3;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transform: translateY(-1px);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color; /* Default focus outline is fine */
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
 button:disabled {
-  background-color: #cccccc; /* Lighter grey for disabled */
+  background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
   border-color: #bbbbbb;
@@ -142,11 +142,11 @@ button:disabled {
 /* Progress Bar Styling */
 progress {
   width: 100%;
-  height: 12px; /* Slimmer progress bar */
+  height: 12px;
   margin-top: 1.5rem;
   border-radius: 6px;
-  border: none; /* Remove border */
-  background-color: #e9ecef; /* Light background for the track */
+  border: none;
+  background-color: #e9ecef;
 }
 
 progress::-webkit-progress-bar {
@@ -155,19 +155,19 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: #007bff; /* Primary color for progress */
+  background-color: #007bff;
   border-radius: 6px;
   transition: width 0.3s ease;
 }
 
-progress::-moz-progress-bar { /* Firefox */
+progress::-moz-progress-bar {
   background-color: #007bff;
   border-radius: 6px;
   transition: width 0.3s ease;
 }
 
 .read-the-docs {
-  color: #6c757d; /* Muted grey for less important text */
+  color: #6c757d;
   margin-top: 2.5rem;
   font-size: 0.85em;
 }
@@ -181,13 +181,85 @@ progress::-moz-progress-bar { /* Firefox */
 }
 
 .error-message {
-  background-color: #f8d7da; /* Light red for error */
-  color: #721c24; /* Dark red text for error */
+  background-color: #f8d7da;
+  color: #721c24;
   border: 1px solid #f5c6cb;
 }
 
 .success-message {
-  background-color: #d4edda; /* Light green for success */
-  color: #155724; /* Dark green text for success */
+  background-color: #d4edda;
+  color: #155724;
   border: 1px solid #c3e6cb;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  #root {
+    padding: 0.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card {
+    padding: 1em;
+    margin-top: 1rem;
+  }
+  
+  input[type="file"] {
+    font-size: 0.9em;
+    padding: 10px 15px;
+    max-width: 100%;
+  }
+  
+  button {
+    padding: 0.7em 1.5em;
+    font-size: 0.95em;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .read-the-docs {
+    font-size: 0.8em;
+    margin-top: 2rem;
+  }
+  
+  .message-container {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6em;
+  }
+  
+  .card {
+    padding: 0.8em;
+    border-radius: 8px;
+  }
+  
+  input[type="file"] {
+    font-size: 0.85em;
+    padding: 8px 12px;
+    border-radius: 20px;
+  }
+  
+  input[type="file"]::file-selector-button {
+    padding: 8px 15px;
+    font-size: 0.85em;
+  }
+  
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+    border-radius: 20px;
+  }
 }
