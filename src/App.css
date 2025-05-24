@@ -1,0 +1,193 @@
+/* Global Resets and Font */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f4f7f9; /* Light grey background */
+  color: #333; /* Darker text color */
+  line-height: 1.6;
+}
+
+#root {
+  max-width: 700px; /* Slightly narrower for better readability */
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff; /* White background for the main app container */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Softer, more spread out shadow */
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: 600; /* Slightly less bold */
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: #2c3e50; /* Dark blue-grey for heading */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card Styling */
+.card {
+  padding: 2em;
+  border: 1px solid #e0e0e0; /* Lighter border */
+  border-radius: 10px;
+  background-color: #ffffff; /* Card background */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 1.5rem;
+}
+
+/* Input[type="file"] Styling */
+input[type="file"] {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  padding: 12px 18px;
+  border: 2px dashed #007bff; /* Primary color dashed border */
+  background-color: #f8f9fa; /* Very light background for input */
+  color: #495057; /* Text color for input */
+  border-radius: 25px; /* Rounded look */
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #007bff; /* Primary color for button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Highly rounded */
+  cursor: pointer;
+  margin-right: 12px;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+input[type="file"]:hover {
+  background-color: #e9ecef;
+  border-color: #0056b3;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+/* Button Styling */
+button {
+  border-radius: 25px; /* Highly rounded / Pill shape */
+  border: 1px solid transparent;
+  padding: 0.8em 1.8em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.25s, box-shadow 0.25s, transform 0.2s;
+  display: inline-block; /* Changed to inline-block for natural width */
+  margin-top: 1rem; /* Add some space above */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker primary on hover */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color; /* Default focus outline is fine */
+}
+
+button:disabled {
+  background-color: #cccccc; /* Lighter grey for disabled */
+  color: #666666;
+  cursor: not-allowed;
+  border-color: #bbbbbb;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Progress Bar Styling */
+progress {
+  width: 100%;
+  height: 12px; /* Slimmer progress bar */
+  margin-top: 1.5rem;
+  border-radius: 6px;
+  border: none; /* Remove border */
+  background-color: #e9ecef; /* Light background for the track */
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e9ecef;
+  border-radius: 6px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #007bff; /* Primary color for progress */
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+progress::-moz-progress-bar { /* Firefox */
+  background-color: #007bff;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.read-the-docs {
+  color: #6c757d; /* Muted grey for less important text */
+  margin-top: 2.5rem;
+  font-size: 0.85em;
+}
+
+/* Message Styling (Errors and Success) */
+.message-container {
+  margin-top: 1.5rem;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+
+.error-message {
+  background-color: #f8d7da; /* Light red for error */
+  color: #721c24; /* Dark red text for error */
+  border: 1px solid #f5c6cb;
+}
+
+.success-message {
+  background-color: #d4edda; /* Light green for success */
+  color: #155724; /* Dark green text for success */
+  border: 1px solid #c3e6cb;
+}
